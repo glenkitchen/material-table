@@ -333,7 +333,7 @@ export default class DataManager {
       const end = Math.max(result.destination.index, result.source.index);
 
       // get the effective start and end considering hidden columns
-      const sorted = this.columns
+      const sorted = [...this.columns]
         .sort((a, b) => a.tableData.columnOrder - b.tableData.columnOrder)
         .filter((column) => column.tableData.groupOrder === undefined);
       let numHiddenBeforeStart = 0;
